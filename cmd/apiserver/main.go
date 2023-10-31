@@ -28,6 +28,7 @@ func main() {
 	err := builder.APIServer.
 		// +kubebuilder:scaffold:resource-register
 		WithResource(&catv1alpha1.Cluster{}).
+		WithLocalDebugExtension().
 		Execute()
 	if err != nil {
 		klog.Fatal(err)

@@ -23,6 +23,7 @@ import (
 	// Import all Kubernetes client auth plugins (e.g. Azure, GCP, OIDC, etc.)
 	// to ensure that exec-entrypoint and run can make use of them.
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
+	"github.com/xakdwch/cluster-apiserver/pkg/apis/cat/v1alpha1"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
@@ -44,6 +45,7 @@ func init() {
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 
 	//+kubebuilder:scaffold:scheme
+	utilruntime.Must(v1alpha1.AddToScheme(scheme))
 }
 
 func main() {
