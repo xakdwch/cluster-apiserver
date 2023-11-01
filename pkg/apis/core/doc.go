@@ -14,24 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1alpha1
+// +k8s:deepcopy-gen=package,register
+// +groupName=core.xhg.io
 
-import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-)
-
-var AddToScheme = func(scheme *runtime.Scheme) error {
-	metav1.AddToGroupVersion(scheme, schema.GroupVersion{
-		Group:   "cat.pets.com",
-		Version: "v1alpha1",
-	})
-	// +kubebuilder:scaffold:install
-
-	scheme.AddKnownTypes(schema.GroupVersion{
-		Group:   "cat.pets.com",
-		Version: "v1alpha1",
-	}, &Cluster{}, &ClusterList{})
-	return nil
-}
+// Package api is the internal version of the API.
+package core

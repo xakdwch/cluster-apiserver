@@ -20,10 +20,10 @@ import (
 	"flag"
 	"os"
 
+	"github.com/xakdwch/cluster-apiserver/pkg/apis/core/v1alpha1"
 	// Import all Kubernetes client auth plugins (e.g. Azure, GCP, OIDC, etc.)
 	// to ensure that exec-entrypoint and run can make use of them.
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
-	"github.com/xakdwch/cluster-apiserver/pkg/apis/cat/v1alpha1"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
@@ -32,7 +32,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	catcontrollers "github.com/xakdwch/cluster-apiserver/controllers/cat"
+	catcontrollers "github.com/xakdwch/cluster-apiserver/controllers/cluster"
 	//+kubebuilder:scaffold:imports
 )
 

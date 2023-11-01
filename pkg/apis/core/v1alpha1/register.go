@@ -1,4 +1,3 @@
-
 /*
 Copyright 2023.
 
@@ -15,10 +14,24 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+package v1alpha1
 
-// +k8s:deepcopy-gen=package,register
-// +groupName=cat.pets.com
+import (
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/apimachinery/pkg/runtime/schema"
+)
 
-// Package api is the internal version of the API.
-package cat
+var AddToScheme = func(scheme *runtime.Scheme) error {
+	metav1.AddToGroupVersion(scheme, schema.GroupVersion{
+		Group:   "core.pets.com",
+		Version: "v1alpha1",
+	})
+	// +kubebuilder:scaffold:install
 
+	scheme.AddKnownTypes(schema.GroupVersion{
+		Group:   "core.pets.com",
+		Version: "v1alpha1",
+	}, &Cluster{}, &ClusterList{})
+	return nil
+}

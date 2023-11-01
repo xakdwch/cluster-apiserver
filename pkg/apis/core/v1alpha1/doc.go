@@ -1,4 +1,3 @@
-
 /*
 Copyright 2023.
 
@@ -21,8 +20,7 @@ limitations under the License.
 
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen=package,register
-// +k8s:conversion-gen=github.com/xakdwch/cluster-apiserver/pkg/apis/cat
+// +k8s:conversion-gen=github.com/xakdwch/cluster-apiserver/pkg/apis/core
 // +k8s:defaulter-gen=TypeMeta
-// +groupName=cat.pets.com
-package v1alpha1 // import "github.com/xakdwch/cluster-apiserver/pkg/apis/cat/v1alpha1"
-
+// +groupName=core.pets.com
+package v1alpha1 // import "github.com/xakdwch/cluster-apiserver/pkg/apis/core/v1alpha1"

@@ -21,7 +21,7 @@ import (
 	"sigs.k8s.io/apiserver-runtime/pkg/builder"
 
 	// +kubebuilder:scaffold:resource-imports
-	catv1alpha1 "github.com/xakdwch/cluster-apiserver/pkg/apis/cat/v1alpha1"
+	catv1alpha1 "github.com/xakdwch/cluster-apiserver/pkg/apis/core/v1alpha1"
 )
 
 func main() {

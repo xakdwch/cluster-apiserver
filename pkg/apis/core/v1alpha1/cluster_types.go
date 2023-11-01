@@ -116,7 +116,7 @@ func (in *Cluster) NewList() runtime.Object {
 
 func (in *Cluster) GetGroupVersionResource() schema.GroupVersionResource {
 	return schema.GroupVersionResource{
-		Group:    "cat.pets.com",
+		Group:    "core.pets.com",
 		Version:  "v1alpha1",
 		Resource: "clusters",
 	}

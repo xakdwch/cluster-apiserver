@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package cat
+package cluster
 
 import (
 	"context"
@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	catv1alpha1 "github.com/xakdwch/cluster-apiserver/pkg/apis/cat/v1alpha1"
+	catv1alpha1 "github.com/xakdwch/cluster-apiserver/pkg/apis/core/v1alpha1"
 )
 
 // ClusterReconciler reconciles a Cluster object
@@ -33,9 +33,9 @@ type ClusterReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=cat,resources=clusters,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=cat,resources=clusters/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=cat,resources=clusters/finalizers,verbs=update
+//+kubebuilder:rbac:groups=core,resources=clusters,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=core,resources=clusters/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=core,resources=clusters/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
